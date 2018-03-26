@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44799858, g: 0.49384576, b: 0.5531551, a: 1}
+  m_IndirectSpecularColor: {r: 0.44799846, g: 0.4938457, b: 0.5531548, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1369,6 +1369,7 @@ GameObject:
   - component: {fileID: 675216522}
   - component: {fileID: 675216521}
   - component: {fileID: 675216525}
+  - component: {fileID: 675216526}
   m_Layer: 0
   m_Name: Barra
   m_TagString: Untagged
@@ -1455,8 +1456,19 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &675216526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675216520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a8350e04328d446959204c37aa0bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &686789292
 GameObject:
   m_ObjectHideFlags: 0
