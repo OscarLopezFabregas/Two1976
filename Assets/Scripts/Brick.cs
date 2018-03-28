@@ -5,11 +5,13 @@ using UnityEngine;
 public class Brick : MonoBehaviour {
 
     public GameObject particles;
+    public Points points;
 
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        points.WinPoints();
     }
     //TODO: POWER UP, WHEN POWER UP ON, ISTRIGGER = TRUE, AND USE ONTRIGGERENTER;
    
