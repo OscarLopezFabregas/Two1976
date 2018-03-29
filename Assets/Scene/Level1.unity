@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000066, guid: 7419bd9dc683bb448809d13431508371,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -2117,6 +2118,7 @@ GameObject:
   - component: {fileID: 756416635}
   - component: {fileID: 756416637}
   - component: {fileID: 756416638}
+  - component: {fileID: 756416639}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2138,6 +2140,8 @@ MonoBehaviour:
   lifeText: {fileID: 135485778}
   Ball: {fileID: 402888813}
   Bat: {fileID: 675216526}
+  gameOver: {fileID: 545696606}
+  nextLevel: {fileID: 756416639}
 --- !u!4 &756416636
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,6 +2179,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exit: 0
+--- !u!114 &756416639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 756416634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936739a158659e9458b944ab8f3c07d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: Portrait
+  delay: 1
 --- !u!1 &839172325
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class StartGame : MonoBehaviour {
     {
 	if(Input.GetButtonDown("Fire1"))
         {
+            Points.points = 0;
+            Lifes.lifes = 3;
             SceneManager.LoadScene("Level1");
         }
 	}

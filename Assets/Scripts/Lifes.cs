@@ -12,6 +12,8 @@ public class Lifes : MonoBehaviour {
     public Text lifeText;
     public BallController Ball;
     public BatController Bat;
+    public GameObject gameOver;
+    public NextLevel nextLevel;
 
     private void Start()
     {
@@ -25,10 +27,25 @@ public class Lifes : MonoBehaviour {
     }
     public void MinusOneLife()
     {
+        if (Lifes.lifes <= 0) return; //Security check
         Lifes.lifes--;
         UpdateLifes();
-        Bat.Reset();
-        Ball.Reset();
+
+        if(Lifes.lifes <= 0)
+        {
+            gameOver.SetActive(true);
+            Ball.StopMovement();
+            Bat.enabled = false;
+
+            nextLevel.levelToLoad = "Portrait";
+            nextLevel.StartLoading();
+        }
+        else
+        {
+            Bat.Reset();
+            Ball.Reset();
+        }
+        
     }
     private void Update()
     {
