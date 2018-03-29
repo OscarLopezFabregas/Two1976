@@ -6,6 +6,10 @@ public class Points : MonoBehaviour {
 
     static public int points = 0;
     public Text textPoints;
+    public GameObject levelCompleted;
+    public GameObject gameCompleted;
+    public BallController ball;
+    public Transform bricks;
 
 	// Use this for initialization
 	void Start ()
