@@ -21,7 +21,6 @@ public class NextLevel : MonoBehaviour {
 
     public bool IsLastLevel()
     {
-      
         return levelToLoad == "Portrait";
         //true or false depends on ^
     }
