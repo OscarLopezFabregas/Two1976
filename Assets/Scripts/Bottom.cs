@@ -5,9 +5,14 @@ using UnityEngine;
 public class Bottom : MonoBehaviour {
 
     public Lifes lifes;
+    public Transform ball;
+    public int minY = -10;
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
+        if(ball.position.y<minY)
         lifes.MinusOneLife();
     }
+    
+    
 }
