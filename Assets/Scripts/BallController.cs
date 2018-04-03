@@ -70,7 +70,7 @@ public class BallController : MonoBehaviour {
 
         }
         //If it was one of the bats
-        if (hit.gameObject.name == "Bat")
+        if (hit.gameObject.name == "Bat" && transform.position.y >= -8.05f)
         {
             if (ballBatDistance > 0)
             {
