@@ -69,21 +69,21 @@ public class BallController : MonoBehaviour {
         {
 
         }
-        //If it was one of the bats
+        //BUUUUUUGSSSSS!!!
         if (hit.gameObject.name == "Bat" && transform.position.y >= -8.05f)
         {
             if (ballBatDistance > 0)
             {
-                if(ballBatDistance > 0.3)
-                rb.velocity = new Vector3(4, speedY);
+                if (ballBatDistance > 0.3)
+                    rb.velocity = new Vector3(4, speedY);
                 else
-                rb.velocity = new Vector3(2, speedY);
+                    rb.velocity = new Vector3(2, speedY);
 
             }
             if (ballBatDistance < 0)
             {
 
-                if (ballBatDistance <- 0.3)
+                if (ballBatDistance < -0.3)
                     rb.velocity = new Vector3(-4, speedY);
                 else
                     rb.velocity = new Vector3(-2, speedY);

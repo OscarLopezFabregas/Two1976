@@ -16,6 +16,8 @@ public class NextLevel : MonoBehaviour {
 
     void LoadLevel()
     {
+        if (!IsLastLevel())
+            Lifes.lifes = 3;
         SceneManager.LoadScene(levelToLoad);
     }
 
