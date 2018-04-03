@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 45100402}
   m_Layer: 0
   m_Name: Bloque (18)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 46423678}
   m_Layer: 0
   m_Name: Bloque (9)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 56765431}
   m_Layer: 0
   m_Name: Bloque (26)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 64416482}
   m_Layer: 0
   m_Name: Bloque (2)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 182803275}
   m_Layer: 0
   m_Name: Bloque (3)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 282698909}
   m_Layer: 0
   m_Name: Bloque (31)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 288763670}
   m_Layer: 0
   m_Name: Bloque (30)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 394941627}
   m_Layer: 0
   m_Name: Bloque (1)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1208,6 +1208,9 @@ GameObject:
   - component: {fileID: 402888809}
   - component: {fileID: 402888814}
   - component: {fileID: 402888813}
+  - component: {fileID: 402888817}
+  - component: {fileID: 402888816}
+  - component: {fileID: 402888815}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1292,7 +1295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9fba42b52c7554dbf9e2c7e7700fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 150
+  initialSpeed: 300
+  speedY: 10
 --- !u!54 &402888814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1307,7 +1311,180 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &402888815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402888808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0281064f53ab8fe4cbc814eecb7f76d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounce: {fileID: 402888817}
+  point: {fileID: 402888816}
+--- !u!82 &402888816
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402888808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8867f8f1561bb9b40b5d44786c56fdeb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &402888817
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402888808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 93ba7760c30809948a632dd0ff77e01b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &450935942
 Prefab:
   m_ObjectHideFlags: 0
@@ -1368,7 +1545,7 @@ GameObject:
   - component: {fileID: 477045710}
   m_Layer: 0
   m_Name: Bloque
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1466,7 +1643,7 @@ GameObject:
   - component: {fileID: 519222170}
   m_Layer: 0
   m_Name: Bloque (4)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1653,7 +1830,7 @@ GameObject:
   - component: {fileID: 587470608}
   m_Layer: 0
   m_Name: Bloque (24)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1751,7 +1928,7 @@ GameObject:
   - component: {fileID: 596428346}
   m_Layer: 0
   m_Name: Bloque (27)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1849,7 +2026,7 @@ GameObject:
   - component: {fileID: 675216525}
   - component: {fileID: 675216526}
   m_Layer: 0
-  m_Name: Barra
+  m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1915,8 +2092,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 675216520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
-  m_LocalScale: {x: 1.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
+  m_LocalScale: {x: 2.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 402888812}
   m_Father: {fileID: 0}
@@ -1948,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a8350e04328d446959204c37aa0bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!1 &686789292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +2149,7 @@ Transform:
   m_GameObject: {fileID: 686789292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.2, z: 1}
+  m_LocalScale: {x: 1.1, y: 0.4, z: 1}
   m_Children:
   - {fileID: 477045706}
   - {fileID: 394941623}
@@ -2023,7 +2200,7 @@ GameObject:
   - component: {fileID: 704830743}
   m_Layer: 0
   m_Name: Bloque (29)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2119,6 +2296,8 @@ GameObject:
   - component: {fileID: 756416637}
   - component: {fileID: 756416638}
   - component: {fileID: 756416639}
+  - component: {fileID: 756416640}
+  - component: {fileID: 756416641}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2142,6 +2321,7 @@ MonoBehaviour:
   Bat: {fileID: 675216526}
   gameOver: {fileID: 545696606}
   nextLevel: {fileID: 756416639}
+  soundEndGame: {fileID: 756416641}
 --- !u!4 &756416636
 Transform:
   m_ObjectHideFlags: 0
@@ -2167,6 +2347,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPoints: {fileID: 1593757940}
+  levelCompleted: {fileID: 285133862}
+  gameCompleted: {fileID: 1762850105}
+  nextLevel: {fileID: 756416639}
+  ball: {fileID: 402888813}
+  bat: {fileID: 675216526}
+  brickContainer: {fileID: 686789293}
+  soundEndGame: {fileID: 756416641}
 --- !u!114 &756416638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,6 +2379,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelToLoad: Portrait
   delay: 1
+--- !u!82 &756416640
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 756416634}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b6846228d581d0449b7bbbfdda1a547d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.14
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &756416641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 756416634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1f2dd3078ca664b8d4ead31d2bf808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 756416640}
+  completed: {fileID: 8300000, guid: 208333998d726f549ac80bef5aa0d150, type: 3}
+  gameOver: {fileID: 8300000, guid: da519a7d65e9fc84eac6d05e9944838f, type: 3}
+  error: {fileID: 8300000, guid: eb0da47a5aa7ebe4f950059b0e60d563, type: 3}
 --- !u!1 &839172325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2488,7 @@ GameObject:
   - component: {fileID: 839172330}
   m_Layer: 0
   m_Name: Bloque (7)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2304,7 +2586,7 @@ GameObject:
   - component: {fileID: 912986844}
   m_Layer: 0
   m_Name: Bloque (12)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2440,7 +2722,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2545,7 +2827,7 @@ GameObject:
   - component: {fileID: 956460557}
   m_Layer: 0
   m_Name: Bloque (17)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2643,7 +2925,7 @@ GameObject:
   - component: {fileID: 1068801222}
   m_Layer: 0
   m_Name: Bloque (25)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2741,7 +3023,7 @@ GameObject:
   - component: {fileID: 1245437564}
   m_Layer: 0
   m_Name: Bloque (5)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2937,7 +3219,7 @@ GameObject:
   - component: {fileID: 1343331361}
   m_Layer: 0
   m_Name: Bloque (15)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3044,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 1390575119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.30767, z: 0}
-  m_LocalScale: {x: 0.28858715, y: 0.3937503, z: 1}
+  m_LocalScale: {x: 0.5771744, y: 0.7875006, z: 1}
   m_Children:
   - {fileID: 2094876234}
   - {fileID: 1680539454}
@@ -3066,7 +3348,7 @@ GameObject:
   - component: {fileID: 1397295163}
   m_Layer: 0
   m_Name: Bloque (14)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3172,8 +3454,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579220522}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -4.4212713, z: 0}
-  m_LocalScale: {x: 0.3937509, y: 5.8307376, z: 1}
+  m_LocalPosition: {x: 0, y: -8.8, z: 0}
+  m_LocalScale: {x: 0.7875018, y: 11.661476, z: 1}
   m_Children:
   - {fileID: 118387193}
   m_Father: {fileID: 0}
@@ -3364,7 +3646,7 @@ GameObject:
   - component: {fileID: 1727844405}
   m_Layer: 0
   m_Name: Bloque (23)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3553,7 +3835,7 @@ GameObject:
   - component: {fileID: 1783011711}
   m_Layer: 0
   m_Name: Bloque (11)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3651,7 +3933,7 @@ GameObject:
   - component: {fileID: 1789682386}
   m_Layer: 0
   m_Name: Bloque (6)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3749,7 +4031,7 @@ GameObject:
   - component: {fileID: 1814396131}
   m_Layer: 0
   m_Name: Bloque (20)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3847,7 +4129,7 @@ GameObject:
   - component: {fileID: 1817647457}
   m_Layer: 0
   m_Name: Bloque (8)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3945,7 +4227,7 @@ GameObject:
   - component: {fileID: 1817726015}
   m_Layer: 0
   m_Name: Bloque (19)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4043,7 +4325,7 @@ GameObject:
   - component: {fileID: 1864008318}
   m_Layer: 0
   m_Name: Bloque (21)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4141,7 +4423,7 @@ GameObject:
   - component: {fileID: 1909798081}
   m_Layer: 0
   m_Name: Bloque (10)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4239,7 +4521,7 @@ GameObject:
   - component: {fileID: 1951615659}
   m_Layer: 0
   m_Name: Bloque (22)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4337,7 +4619,7 @@ GameObject:
   - component: {fileID: 2039565950}
   m_Layer: 0
   m_Name: Bloque (13)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4476,7 +4758,7 @@ GameObject:
   - component: {fileID: 2114336383}
   m_Layer: 0
   m_Name: Bloque (16)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4574,7 +4856,7 @@ GameObject:
   - component: {fileID: 2116833297}
   m_Layer: 0
   m_Name: Bloque (28)
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

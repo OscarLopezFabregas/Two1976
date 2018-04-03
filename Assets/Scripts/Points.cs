@@ -8,11 +8,16 @@ public class Points : MonoBehaviour {
     public Text textPoints;
     public GameObject levelCompleted;
     public GameObject gameCompleted;
-    public BallController ball;
-    public Transform bricks;
 
-	// Use this for initialization
-	void Start ()
+    public NextLevel nextLevel;
+    public BallController ball;
+    public BatController bat;
+    public Transform brickContainer;
+
+    public SoundEndGame soundEndGame;
+
+    // Use this for initialization
+    void Start ()
     {
         UpdatePoints();
 	}
@@ -26,5 +31,18 @@ public class Points : MonoBehaviour {
     {
         Points.points++;
         UpdatePoints();
+
+        if(brickContainer.childCount <=0)
+        {
+            soundEndGame.LevelCompleted();
+            ball.StopMovement();
+            bat.enabled = false;
+            if(nextLevel.IsLastLevel())
+            {
+                gameCompleted.SetActive(true);
+            }
+
+            nextLevel.StartLoading();
+        }
     }
 }

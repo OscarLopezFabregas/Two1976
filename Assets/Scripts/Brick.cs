@@ -11,6 +11,7 @@ public class Brick : MonoBehaviour {
     {
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        transform.SetParent(null);
         points.WinPoints();
     }
     //TODO: POWER UP, WHEN POWER UP ON, ISTRIGGER = TRUE, AND USE ONTRIGGERENTER;

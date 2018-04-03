@@ -14,6 +14,7 @@ public class Lifes : MonoBehaviour {
     public BatController Bat;
     public GameObject gameOver;
     public NextLevel nextLevel;
+    public SoundEndGame soundEndGame;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class Lifes : MonoBehaviour {
 
         if(Lifes.lifes <= 0)
         {
+            soundEndGame.GameOver();
             gameOver.SetActive(true);
             Ball.StopMovement();
             Bat.enabled = false;
@@ -42,8 +44,10 @@ public class Lifes : MonoBehaviour {
         }
         else
         {
+            soundEndGame.Error();
             Bat.Reset();
             Ball.Reset();
+            
         }
         
     }

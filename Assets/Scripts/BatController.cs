@@ -25,6 +25,6 @@ public class BatController : MonoBehaviour {
         float horizontalKeyboard = Input.GetAxisRaw("Horizontal");
         float posX = transform.position.x + horizontalKeyboard * speed * Time.deltaTime;
 
-        transform.position = new Vector3(Mathf.Clamp(posX, -2.175f, 2.175f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(posX, -4.3f, 4.3f), transform.position.y, transform.position.z);
 	}
 }
