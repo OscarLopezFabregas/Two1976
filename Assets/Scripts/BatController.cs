@@ -32,26 +32,28 @@ public class BatController : MonoBehaviour {
         //ANDROID CONTROLLER
 
         rb.velocity = new Vector3(0f, 0f, 0f);
+     
+        if (Input.touchCount > 0)
+        {
+           float mouseRatioX = (Input.GetTouch(0).position.x - 0.5f) / Screen.width; //-0.5 y 0.5}
+            float batPosX = transform.position.x / 8.6f; //-0.5 y 0.5
+            float distance = batPosX - mouseRatioX;
+            Debug.Log("Mouse ratio: " + mouseRatioX);
+            Debug.Log("batPos: " + batPosX);
+            Debug.Log("distance: " + distance);
 
-       
-        float mouseRatioX = (Input.GetTouch(0).position.x -0.5f) / Screen.width; //-0.5 y 0.5
-        float batPosX = transform.position.x / 8.6f; //-0.5 y 0.5
-        float distance = batPosX - mouseRatioX;
 
-       
+            if (distance > -0.5f)
+            { rb.velocity = new Vector3(-speed, 0f, 0f); }
+            else if (distance < -0.5f)
+            { rb.velocity = new Vector3(+speed, 0f, 0f); }
 
 
-        if (distance > 0.0f)
-        { rb.velocity = new Vector3(speed, 0f, 0f); }
-        else if (distance < -0.0f)
-        { rb.velocity = new Vector3(speed, 0f, 0f); }
-        //float nTouchPosition = (touch.position.x - (1080 / 2)) / (1080 / 2);
-        // float distance = touch.position.x - transform.position.x;
 
-        // if (distance >= 0f)
-        // { rb.velocity = new Vector3(speed, 0f, 0f);}       
-        //else
-        // { rb.velocity = new Vector3(speed, 0f, 0f);}
+        }
+
+
+
 
 
     }
