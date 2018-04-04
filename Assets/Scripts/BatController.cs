@@ -33,13 +33,26 @@ public class BatController : MonoBehaviour {
 
         rb.velocity = new Vector3(0f, 0f, 0f);
 
-        foreach (Touch touch in Input.touches)
-        {
-            float distance = touch.position.x - transform.position.x;
-            if (distance > 0.1f)
-                rb.velocity= new Vector3(speed, 0f, 0f);
-            if (distance < 0.1f)
-                rb.velocity = new Vector3(-speed, 0f, 0f);
-        }
+       
+        float mouseRatioX = (Input.GetTouch(0).position.x -0.5f) / Screen.width; //-0.5 y 0.5
+        float batPosX = transform.position.x / 8.6f; //-0.5 y 0.5
+        float distance = batPosX - mouseRatioX;
+
+       
+
+
+        if (distance > 0.0f)
+        { rb.velocity = new Vector3(speed, 0f, 0f); }
+        else if (distance < -0.0f)
+        { rb.velocity = new Vector3(speed, 0f, 0f); }
+        //float nTouchPosition = (touch.position.x - (1080 / 2)) / (1080 / 2);
+        // float distance = touch.position.x - transform.position.x;
+
+        // if (distance >= 0f)
+        // { rb.velocity = new Vector3(speed, 0f, 0f);}       
+        //else
+        // { rb.velocity = new Vector3(speed, 0f, 0f);}
+
+
     }
 }
