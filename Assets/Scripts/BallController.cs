@@ -41,7 +41,9 @@ public class BallController : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-	    if(!inGame && Input.GetButtonDown("Fire1"))
+        Touch touch = Input.GetTouch(0);
+
+        if (!inGame && touch.phase == TouchPhase.Ended) //<- Adapted to android;
         {
             inGame = true;
             transform.SetParent(null);

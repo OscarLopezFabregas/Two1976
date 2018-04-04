@@ -8,7 +8,9 @@ public class StartGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	if(Input.GetButtonDown("Fire1"))
+        Touch touch = Input.GetTouch(0);
+        //	if(Input.GetButtonDown("Fire1"))
+        if(touch.phase == TouchPhase.Ended)
         {
             Points.points = 0;
             Lifes.lifes = 3;

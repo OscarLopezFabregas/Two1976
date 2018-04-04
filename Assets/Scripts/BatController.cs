@@ -6,12 +6,13 @@ using UnityEngine.Events;
 public class BatController : MonoBehaviour {
 
     public float speed = 0.4f;
-   
+    Rigidbody rb;
     Vector3 initPos;
-	// Use this for initialization
+
 	void Start ()
     {
         initPos = transform.position;
+        rb = GetComponent<Rigidbody>();
 	}
 
     public void Reset()
@@ -19,12 +20,26 @@ public class BatController : MonoBehaviour {
         transform.position = initPos;
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-        float horizontalKeyboard = Input.GetAxisRaw("Horizontal");
-        float posX = transform.position.x + horizontalKeyboard * speed * Time.deltaTime;
 
-        transform.position = new Vector3(Mathf.Clamp(posX, -4.3f, 4.3f), transform.position.y, transform.position.z);
-	}
+    void Update()
+    {
+        //PC CONTROLLER
+
+        //float horizontalKeyboard = Input.GetAxisRaw("Horizontal");
+        //float posX = transform.position.x + horizontalKeyboard * speed * Time.deltaTime;
+        //transform.position = new Vector3(Mathf.Clamp(posX, -4.3f, 4.3f), transform.position.y, transform.position.z);
+
+        //ANDROID CONTROLLER
+
+        rb.velocity = new Vector3(0f, 0f, 0f);
+
+        foreach (Touch touch in Input.touches)
+        {
+            float distance = touch.position.x - transform.position.x;
+            if (distance > 0.1f)
+                rb.velocity= new Vector3(speed, 0f, 0f);
+            if (distance < 0.1f)
+                rb.velocity = new Vector3(-speed, 0f, 0f);
+        }
+    }
 }
