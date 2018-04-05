@@ -38,23 +38,15 @@ public class BatController : MonoBehaviour {
             float mouseRatioX = (Input.GetTouch(0).position.x) / Screen.width; //-0.5 y 0.5}
             float mouseNormX = mouseRatioX - 0.5f;
             float batTargetPos = mouseNormX * 8.6f;
-           // float batPosX = transform.position.x / 8.6f; //-0.5 y 0.5
-           //float distance = batPosX - mouseRatioX;
-            //Debug.Log("Mouse norm: " + transf);
+       
             
-
-            // Debug.Log("batPos: " + batPosX);
-            //Debug.Log("distance: " + distance);
             Vector3 batNewPosVec = new Vector3(batTargetPos, -8f, 0f);
 
             Debug.Log("Mouse norm: " + batNewPosVec);
 
             transform.position = Vector3.MoveTowards(transform.position, batNewPosVec, speed * Time.deltaTime);
 
-            //if (distance > -0.5f)
-            //{ rb.velocity = new Vector3(-speed, 0f, 0f); }
-            //else if (distance < -0.5f)
-            //{ rb.velocity = new Vector3(+speed, 0f, 0f); }
+       
 
 
 
