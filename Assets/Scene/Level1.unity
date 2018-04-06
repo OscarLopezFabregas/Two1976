@@ -1979,7 +1979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936739a158659e9458b944ab8f3c07d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level2
+  levelToLoad: Map
   delay: 1
 --- !u!82 &756416640
 AudioSource:
