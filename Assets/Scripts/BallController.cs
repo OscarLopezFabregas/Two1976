@@ -72,6 +72,17 @@ public class BallController : MonoBehaviour {
 
         }
         //BUUUUUUGSSSSS!!!
+
+
+        
+        ///<sumary>
+        /// (165º )150º   )135º  )120   )( 85/95º )(     60º(    45º(   30º(   15º)
+        ///(------------------------------------------------------------------)
+        /// BAT (bat length, 9 areas)  (bat.size.x/9)
+        /// ballBatDistance = 
+
+
+        
         if (hit.gameObject.name == "Bat" && transform.position.y >= -8.05f)
         {
             if (ballBatDistance > 0)
