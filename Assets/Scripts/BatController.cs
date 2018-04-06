@@ -40,7 +40,7 @@ public class BatController : MonoBehaviour {
             float batTargetPos = mouseNormX * 8.6f;
        
             
-            Vector3 batNewPosVec = new Vector3(batTargetPos, -8f, 0f);
+            Vector3 batNewPosVec = new Vector3(batTargetPos, -6f, 0f);
 
             Debug.Log("Mouse norm: " + batNewPosVec);
 

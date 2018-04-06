@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour {
 
@@ -12,15 +13,15 @@ public class LevelSelector : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //Is an 2d object as any other
-        //OnMouseDown();
-
-
-        //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-        //if (hit != null && hit.collider != null)
-        //{
-        //    Debug.Log("I'm hitting " + hit.collider.name);
-        //}
+        if(Input.GetMouseButtonUp(0))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            if (hit && hit.collider != null)
+            {
+                SceneManager.LoadScene(hit.collider.name);
+            }
+        }
+       
     }
 }
