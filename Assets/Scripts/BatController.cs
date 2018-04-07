@@ -42,7 +42,7 @@ public class BatController : MonoBehaviour {
             
             Vector3 batNewPosVec = new Vector3(batTargetPos, -6f, 0f);
 
-            Debug.Log("Mouse norm: " + batNewPosVec);
+          
 
             transform.position = Vector3.MoveTowards(transform.position, batNewPosVec, speed * Time.deltaTime);
 

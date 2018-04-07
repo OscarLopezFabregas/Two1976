@@ -43,7 +43,7 @@ public class BallController : MonoBehaviour {
     {
 
 
-        if (!inGame && Input.GetMouseButtonDown(0)) //<- Adapted to android;
+        if (!inGame && Input.GetMouseButtonUp(0)) //<- Adapted to android;
         {
             inGame = true;
             transform.SetParent(null);
@@ -53,10 +53,9 @@ public class BallController : MonoBehaviour {
         }
 	}
     //TODO: On collision hit with edges the ball needs to modify its direction by few degrees on Y axis.
-    void OnCollisionExit(Collision hit)
+    void OnCollisionEnter(Collision hit)
     {
-        float ballBatDistance = (transform.position.x
-            - hit.gameObject.transform.position.x);
+    
         //If it was the top or bottom of the screen...
         //1st option to increase the speed while playing
         if (hit.gameObject.name == "Right")
@@ -73,37 +72,51 @@ public class BallController : MonoBehaviour {
         }
         //BUUUUUUGSSSSS!!!
 
-
-        
-        ///<sumary>
-        /// (165º )150º   )135º  )120   )( 85/95º )(     60º(    45º(   30º(   15º)
+                ///<sumary>
+        /// 150º   )135º  )120   )(     60º(    45º(   30º)
         ///(------------------------------------------------------------------)
-        /// BAT (bat length, 9 areas)  (bat.size.x/9)
+        /// BAT (bat length, 6 areas)  (bat.size.x/9)
         /// ballBatDistance = 
 
 
         
         if (hit.gameObject.name == "Bat" && transform.position.y >= -8.05f)
         {
-            if (ballBatDistance > 0)
+          float ballBatDistance = (transform.position.x
+        - hit.gameObject.transform.position.x);
+
+            Debug.Log("Distance: " + ballBatDistance);
+
+            if (ballBatDistance > -1.4f && ballBatDistance < -1f)
             {
-                if (ballBatDistance > 0.3)
-                    rb.velocity = new Vector3(4, speedY);
-                else
-                    rb.velocity = new Vector3(2, speedY);
-
+                SetSpeed(rb, -8, speedY);
             }
-            if (ballBatDistance < 0)
+            else if (ballBatDistance > -1f && ballBatDistance < -0.5f)
             {
-
-                if (ballBatDistance < -0.3)
-                    rb.velocity = new Vector3(-4, speedY);
-                else
-                    rb.velocity = new Vector3(-2, speedY);
-
+                SetSpeed(rb, -4, speedY);
             }
-
+            else if (ballBatDistance > -0.5f && ballBatDistance < 0f)
+            {
+                SetSpeed(rb, -2, speedY);
+            }
+            else if (ballBatDistance > 0f && ballBatDistance < 0.5f)
+            {
+                SetSpeed(rb, 2, speedY);
+            }
+            else if (ballBatDistance > 0.5f && ballBatDistance < 1f)
+            {
+                SetSpeed(rb, 4, speedY);
+            }
+            else if (ballBatDistance > 1f && ballBatDistance < 1.4f)
+            {
+                SetSpeed(rb, 8, speedY);
+            }
         }
     }
 
+    void SetSpeed (Rigidbody rb, float speedX, float speedY) 
+    {
+        rb.velocity = new Vector3(speedX, speedY);
+        Debug.Log("Ball speed: " + rb.velocity);
+    }
 }
