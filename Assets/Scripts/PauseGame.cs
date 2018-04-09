@@ -8,7 +8,13 @@ public class PauseGame : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0f;
+        gameIsPaused = true;
     }
 
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
     
 }
