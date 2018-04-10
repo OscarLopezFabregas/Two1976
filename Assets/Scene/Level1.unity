@@ -1255,6 +1255,10 @@ Prefab:
       propertyPath: adUnitIDAndroid
       value: ca-app-pub-3940256099942544/6300978111
       objectReference: {fileID: 0}
+    - target: {fileID: 175366, guid: b7f4e8f6281fedc469436f264c7f4390, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7f4e8f6281fedc469436f264c7f4390, type: 2}
   m_IsPrefabParent: 0

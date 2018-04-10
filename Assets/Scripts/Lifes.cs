@@ -8,7 +8,7 @@ public class Lifes : MonoBehaviour {
     //static forces int lifes to exist only ONCE in the whole app.
     //Global
     //We will be able to access from everywhere in the program
-    public static int lifes = 3;
+    public static int lifes;
     public Text lifeText;
     public BallController Ball;
     public BatController Bat;
@@ -18,6 +18,8 @@ public class Lifes : MonoBehaviour {
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("Lifes")) PlayerPrefs.SetInt("Lifes", Lifes.lifes = 3);
+        Lifes.lifes = PlayerPrefs.GetInt("Lifes");
         UpdateLifes();
     }
 
