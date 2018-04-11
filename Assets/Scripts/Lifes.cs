@@ -52,8 +52,7 @@ public class Lifes : MonoBehaviour {
         Ball.StopMovement();
         //For the moment lifes will be reset on gameOver condition
         nextLevel.levelToLoad = "Portrait";
-
-        
+              
 
         nextLevel.StartLoading();
     }
