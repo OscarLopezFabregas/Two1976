@@ -2938,6 +2938,7 @@ GameObject:
   - component: {fileID: 1291747450}
   - component: {fileID: 1291747454}
   - component: {fileID: 1291747455}
+  - component: {fileID: 1291747456}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3034,7 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 0}
-  gameAudio: {fileID: 0}
+  gameAudio: {fileID: 24100000, guid: 66e6aba5745c255429eecf8028276c9c, type: 2}
 --- !u!114 &1291747455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,6 +3045,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf3d6154edde4974188282c09853ff7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1291747456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1291747449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5c5647b6cf17647a4fa0757c0c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1343331356
@@ -5387,6 +5399,46 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508965604537960, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1291747456}
+    - target: {fileID: 114508965604537960, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwitchText
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508965604537960, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1291747456}
+    - target: {fileID: 114508965604537960, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SwitchText
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183464567040000, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1291747456}
+    - target: {fileID: 114183464567040000, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwitchText
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183464567040000, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1291747456}
+    - target: {fileID: 114183464567040000, guid: e93bdad35674e324bb80b9a4de901502,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SwitchText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e93bdad35674e324bb80b9a4de901502, type: 2}

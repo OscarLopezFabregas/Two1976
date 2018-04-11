@@ -7,7 +7,8 @@ public class MenuManager : MonoBehaviour {
     public GameObject options;
     public AudioMixer gameAudio;
 
-	public void Activate(GameObject panel)
+  
+    public void Activate(GameObject panel)
     {
         panel.transform.SetAsLastSibling();
         panel.SetActive(true);
@@ -29,4 +30,6 @@ public class MenuManager : MonoBehaviour {
               
     }
 
+   
+    
 }

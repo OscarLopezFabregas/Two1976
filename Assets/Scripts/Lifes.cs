@@ -18,7 +18,7 @@ public class Lifes : MonoBehaviour {
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("Lifes")) PlayerPrefs.SetInt("Lifes", Lifes.lifes = 3);
+        if (!PlayerPrefs.HasKey("Lifes")) PlayerPrefs.SetInt("Lifes", 3);
         Lifes.lifes = PlayerPrefs.GetInt("Lifes");
         UpdateLifes();
     }
@@ -26,32 +26,36 @@ public class Lifes : MonoBehaviour {
     void UpdateLifes()
     {
         lifeText.text = "Lifes: " + Lifes.lifes;
+        PlayerPrefs.SetInt("Lifes", Lifes.lifes);
+        
 
-    }
+
+        }
     public void MinusOneLife()
     {
-        if (Lifes.lifes <= 0) return; //Security check
-        Lifes.lifes--;
-        UpdateLifes();
-
-        if(Lifes.lifes <= 0)
-        {
-            soundEndGame.GameOver();
-            gameOver.SetActive(true);
-            Ball.StopMovement();
-            Bat.enabled = false;
-
-            nextLevel.levelToLoad = "Portrait";
-            nextLevel.StartLoading();
-        }
-        else
-        {
+     
+            Lifes.lifes--;
+            UpdateLifes();
             soundEndGame.Error();
             Bat.Reset();
             Ball.Reset();
             
-        }
         
+     
+    }
+   public void GameOver()
+    {
+        Bat.enabled = false;
+        Ball.enabled = false;
+        soundEndGame.GameOver();
+        gameOver.SetActive(true);
+        Ball.StopMovement();
+        //For the moment lifes will be reset on gameOver condition
+        nextLevel.levelToLoad = "Portrait";
+
+        
+
+        nextLevel.StartLoading();
     }
     private void Update()
     {

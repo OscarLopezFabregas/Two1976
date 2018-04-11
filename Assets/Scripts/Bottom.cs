@@ -11,7 +11,16 @@ public class Bottom : MonoBehaviour {
     private void Update()
     {
         if(ball.position.y<minY)
-        lifes.MinusOneLife();
+        {
+            if (Lifes.lifes <= 1)
+            {
+                Lifes.lifes = 4;
+                lifes.GameOver();
+               
+            }else
+            lifes.MinusOneLife();
+        }
+         
     }
     
     
