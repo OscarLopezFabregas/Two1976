@@ -19,6 +19,12 @@ public class Points : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        if (PlayerPrefs.HasKey("Level"))
+        {
+            Debug.Log("Creating LEVEL key!");
+            PlayerPrefs.SetInt("Level", 1);
+        }
+            
         UpdatePoints();
 	}
 
@@ -34,6 +40,7 @@ public class Points : MonoBehaviour {
 
         if(brickContainer.childCount <=0)
         {
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
             soundEndGame.LevelCompleted();
             ball.StopMovement();
             bat.enabled = false;
@@ -41,7 +48,7 @@ public class Points : MonoBehaviour {
             {
                 gameCompleted.SetActive(true);
             }
-
+           
             nextLevel.StartLoading();
         }
     }
