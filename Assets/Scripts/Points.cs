@@ -19,7 +19,7 @@ public class Points : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        if (PlayerPrefs.HasKey("Level"))
+        if (!PlayerPrefs.HasKey("Level"))
         {
             Debug.Log("Creating LEVEL key!");
             PlayerPrefs.SetInt("Level", 1);
