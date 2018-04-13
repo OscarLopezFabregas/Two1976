@@ -28,9 +28,7 @@ public class Lifes : MonoBehaviour {
         lifeText.text = "Lifes: " + Lifes.lifes;
         PlayerPrefs.SetInt("Lifes", Lifes.lifes);
         
-
-
-        }
+    }
     public void MinusOneLife()
     {
      
@@ -38,9 +36,7 @@ public class Lifes : MonoBehaviour {
             UpdateLifes();
             soundEndGame.Error();
             Bat.Reset();
-            Ball.Reset();
-            
-        
+            Ball.Reset();     
      
     }
    public void GameOver()
@@ -52,8 +48,6 @@ public class Lifes : MonoBehaviour {
         Ball.StopMovement();
         //For the moment lifes will be reset on gameOver condition
         nextLevel.levelToLoad = "Portrait";
-              
-
         nextLevel.StartLoading();
     }
     private void Update()
