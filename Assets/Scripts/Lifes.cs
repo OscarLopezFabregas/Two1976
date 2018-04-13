@@ -18,7 +18,6 @@ public class Lifes : MonoBehaviour {
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("Lifes")) PlayerPrefs.SetInt("Lifes", 3);
         Lifes.lifes = PlayerPrefs.GetInt("Lifes");
         UpdateLifes();
     }

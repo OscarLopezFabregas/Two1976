@@ -16,9 +16,7 @@ public class NextLevel : MonoBehaviour {
 
     void LoadLevel()
     {
-        //if (!IsLastLevel())
-        //    Lifes.lifes 
-        SceneManager.LoadScene(levelToLoad);
+       SceneManager.LoadScene(levelToLoad);
     }
 
     public bool IsLastLevel()
