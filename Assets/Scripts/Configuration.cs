@@ -21,6 +21,8 @@ public class Configuration : MonoBehaviour {
         {
             PlayerPrefs.SetInt("Lifes", 3);
         }
+
+        
     }
 
     public void DeleteAllPlayerPrefs()
